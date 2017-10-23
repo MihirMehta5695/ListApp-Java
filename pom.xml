@@ -87,6 +87,13 @@
 			<version>1.4.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+			<version>2.16</version>
+		</dependency>
+
 
 	</dependencies>
 	<properties>
