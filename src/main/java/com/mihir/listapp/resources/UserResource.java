@@ -6,6 +6,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.hibernate.Session;
 
@@ -20,15 +21,13 @@ public class UserResource
 {
 
 	UserServices userServices = new UserServices();
-	//Session session = HibernateUtils.getSession();
+	Session session = HibernateUtils.getSession();
 	
 	@POST
-	public User addUser(User user)
+	public Response addUser(User user)
 	{
 		System.out.println("Here");
-		user = userServices.getUser();
-		System.out.println(user);
-		return userServices.getUser();
+		return userServices.addUser(user, session);
 	}
 	
 	/*@GET

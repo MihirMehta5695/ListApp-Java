@@ -28,5 +28,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="lib" path="E:/Downloads/Programming/mysql-connector-java-5.1.42.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
