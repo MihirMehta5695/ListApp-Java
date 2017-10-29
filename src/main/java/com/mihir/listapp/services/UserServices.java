@@ -33,7 +33,6 @@ public class UserServices
 		Response resp = null;
 		try
 		{
-			user = new User("mbmehta-in", "789456123", "05-06-1995", "mmehta@gmail.com", "Mihir", "Mehta");
 			SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
@@ -41,7 +40,7 @@ public class UserServices
 			session.getTransaction().commit();
 			session.close();
 			sessionFactory.close();
-			resp = Response.status(Status.CREATED).build();
+			resp = Response.status(Status.CREATED).entity(user).build();
 
 		}
 		catch (HibernateException e)

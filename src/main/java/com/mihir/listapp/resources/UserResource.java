@@ -21,27 +21,30 @@ public class UserResource
 {
 
 	UserServices userServices = new UserServices();
-	Session session = HibernateUtils.getSession();
+	Session session = null;
 	
 	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addUser(User user)
 	{
-		System.out.println("Here");
+		System.out.println("New");
+		System.out.println("User Data : " + user);
+		session = new HibernateUtils().getSession();
 		return userServices.addUser(user, session);
 	}
 	
-	/*@GET
+	@GET
 	public User getUser()
 	{
 		System.out.println("Here");
 		return userServices.getUser();
-	}*/
+	}
 	
-	@GET
+	/*@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getIt()
 	{
 		return "Got it!";
-	}
+	}*/
 	
 }

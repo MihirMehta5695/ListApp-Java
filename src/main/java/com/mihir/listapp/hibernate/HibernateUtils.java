@@ -7,20 +7,14 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtils
 {
 
-	private static final SessionFactory sessionFactory = buildSessionFactory();
+	private static SessionFactory sessionFactory = null;
 
-	private HibernateUtils()
+	public Session getSession()
 	{
-
-	}
-
-	private static SessionFactory buildSessionFactory()
-	{
-		return new Configuration().configure().buildSessionFactory();
-	}
-
-	public static Session getSession()
-	{
+		if (sessionFactory == null)
+		{
+			sessionFactory = new Configuration().configure().buildSessionFactory();
+		}
 		return sessionFactory.openSession();
 	}
 
@@ -32,7 +26,7 @@ public class HibernateUtils
 		session.close();
 	}
 
-	public static void shutdown()
+	public void shutdown()
 	{
 		sessionFactory.close();
 	}
