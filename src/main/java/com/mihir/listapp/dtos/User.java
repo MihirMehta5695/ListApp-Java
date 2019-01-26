@@ -2,6 +2,7 @@ package com.mihir.listapp.dtos;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.validator.routines.EmailValidator;
@@ -18,11 +19,17 @@ import com.mihir.listapp.regex.Regex;
 public class User
 {
 	@Id
+	@XmlElement
 	private String	uname;
+	@XmlElement
 	private String	pass;
+	@XmlElement
 	private String	dob;
+	@XmlElement
 	private String	email;
+	@XmlElement
 	private String	firstName;
+	@XmlElement
 	private String	lastName;
 
 	public User()
